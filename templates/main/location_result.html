@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card bg-dark text-white mx-auto " >
+  <img src= "{{ image_theme }}" class="card-img img-responsive" style = "..."
+  alt = "cannot load images">
+  <div class="card-img-overlay">
+    <h5 class="card-title display-2 font-italic">
+        {{ location.name }} || {{ location.main.temp }}&#176C
+    </h5>
+      <br>
+      <h6 class = "display-3 text-capitalize font-weight-bold">
+          {{ location.weather.0.description }}
+      </h6>
+      <br>
+    <li>Max : {{ location.main.temp_max }}&#176C &nbsp;| &nbsp;
+        Min : {{ location.main.temp_min }}&#176C &nbsp;| &nbsp;
+        Feels Like : {{ location.main.feels_like }}&#176C</li>
+      <li>Humidity : {{ location.main.humidity }}</li>
+      <li>Wind Speed : {{ location.wind.speed }} m/sec &nbsp;| &nbsp;
+          Wind Direction : {{ location.wind.deg }}&#176</li>
+      <li>Visibility : {{ location.visibility}} m</li>
+  </div>
+</div>
+
+    <br>
+    <br>
+<div class = "containe">
+    <div class="row row-cols-1 row-cols-md-2 mx-auto" style = "width:700px">
+  <div class="col mb-4">
+    <div class="card
+    mx-auto shadow-lg p-3 mb-5 bg-info rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.0.weather.0.icon}}@2x.png" class="card-img-top" alt="..."
+           style = "width : 150px; height : 150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.0.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.0.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.0.main.temp_max }}&#176C | Min : {{ details_hourly.0.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.0.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.0.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto  border border-info  shadow-lg p-3 mb-5 bg-white rounded" style = "width:300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.1.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height: 150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.1.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.1.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.1.main.temp_max }}&#176C | Min : {{ details_hourly.1.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.1.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.1.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto  border border-info  shadow-lg p-3 mb-5 bg-white rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.2.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height:150px">
+      <div class="card-body  ">
+        <h5 class="card-title">{{ details_hourly.2.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.2.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.2.main.temp_max }}&#176C | Min : {{ details_hourly.2.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.2.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.2.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto  shadow-lg p-3 mb-5 bg-info rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.3.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height:150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.0.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.3.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.3.main.temp_max }}&#176C | Min : {{ details_hourly.3.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.0.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.0.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-2 mx-auto" style = "width:700px">
+  <div class="col mb-4">
+    <div class="card  mx-auto  bg-info  shadow-lg p-3 mb-5 bg-info rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.4.weather.0.icon}}@2x.png" class="card-img-top" alt="..."
+           style = "width : 150px; height : 150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.4.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.4.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.4.main.temp_max }}&#176C | Min : {{ details_hourly.4.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.4.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.4.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto  border border-info  shadow-lg p-3 mb-5 bg-white rounded" style = "width:300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.5.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height: 150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.5.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.5.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.5.main.temp_max }}&#176C | Min : {{ details_hourly.5.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.5.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.5.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto  border border-info  shadow-lg p-3 mb-5 bg-white rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.6.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height:150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.6.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.6.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.6.main.temp_max }}&#176C | Min : {{ details_hourly.6.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.6.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.6.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card  mx-auto shadow-lg p-3 mb-5 bg-info rounded" style = "width: 300px">
+      <img src="http://openweathermap.org/img/wn/{{details_hourly.7.weather.0.icon}}@2x.png"
+           class="card-img-top" alt="..." style = "width: 150px; height:150px">
+      <div class="card-body">
+        <h5 class="card-title">{{ details_hourly.7.dt_txt }}</h5>
+          <h6 class = "text-capitalize">{{ details_hourly.7.weather.0.description }}</h6>
+        <p class="card-text">
+          <li>Max : {{ details_hourly.7.main.temp_max }}&#176C | Min : {{ details_hourly.0.main.temp_min }}&#176C</li>
+          <li>Humidity : {{ details_hourly.7.main.humidity }}%</li>
+          <li>Wind Speed : {{ details_hourly.7.wind.speed }} m/sec</li>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

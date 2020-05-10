@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid p-3 mb-2 bg-dark text-white">
+  <div class="container" >
+      <h1 class="display-4 ">USS Weather: Get The Latest Forecasts</h1>
+
+    <p class="lead">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Stay updated with USS weather forecast. Get the latest updates
+    anytime anywhere.</p>
+  </div>
+<br>
+
+
+        <form action = "#" method = "POST" name = "city_name">
+        {% csrf_token %}
+        <div class="form-group margin mx-5">
+      <input type="text" class="form-control"
+             id="exampleInputEmail1"
+           aria-describedby="emailHelp"
+             placeholder="Type the name of the city."
+             name = "city_name_input">
+</div>
+        <div class="mx-auto" style="width: 200px;">
+        <button type="submit" class="btn btn-primary margin mx-5">Show Details</button>
+        </div>
+    </form>
+
+    </div>
+{% endblock %}

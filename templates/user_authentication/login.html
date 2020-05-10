@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "">
+    <div class = "mx-auto alert alert-info" style = "width : 400px">
+        <h class = "h2">Login</h>
+        <br>
+        <br>
+    <form action = "#" method = "POST">
+    {% csrf_token %}
+        {{ form.as_p }}
+            <input type = "submit" value = "login">
+    </form>
+        <br>
+        <a href = "{% url 'signup' %}">Don't have an account ? Signup</a>
+    </div>
+    </div>
+{% endblock %}

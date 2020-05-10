@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if hometown %}
+    <div class="card bg-dark text-white mx-auto " >
+  <img src= "{{ image_theme }}" class="card-img img-responsive" style = "height: 500px"
+  alt = "cannot load images">
+  <div class="card-img-overlay">
+    <h5 class="card-title display-2 font-italic">
+        {{ hometown.set.name }} || {{ hometown.set.main.temp }}&#176C
+    </h5>
+      <br>
+      <h6 class = "display-3 text-capitalize font-weight-bold">
+          {{ hometown.set.weather.0.description }}
+      </h6>
+      <br>
+    <li>Max : {{ hometown.set.main.temp_max }}&#176C &nbsp;| &nbsp;
+        Min : {{ hometown.set.main.temp_min }}&#176C | &nbsp;
+        Feels Like : {{ hometown.set.main.feels_like }}&#176C</li>
+      <li>Humidity : {{ hometown.set.main.humidity }}%</li>
+      <li>Wind Speed : {{ hometown.set.wind.speed }} m/sec &nbsp;| &nbsp;
+          Wind Direction : 170 &#176</li>
+      <li>Visibility : {{ hometown.set.visibility}} m</li>
+
+      <br>
+      <br>
+
+  </div>
+</div>
+    {% else %}
+        <a href = "{% url 'profile_settings' %}">
+            Click here to add a hometown
+        </a>
+    {% endif %}
+    <br>
+    <br>
+
+{% for detail in details %}
+    <div class="alert alert-warning" role="alert">
+        {{ detail.set.name }}
+        <div class = "float-right">
+            <a href = "{% url 'set_hometown' detail.id %}">Set as hometown</a> ||
+        <a href = "{% url 'delete_city' detail.id %}">Remove</a>
+        </div>
+    </div>
+    <div class="alert alert-dark" role="alert">
+        {{ detail.set.main.temp }}&#176C
+    </div>
+    <br>
+
+
+{% endfor %}
+{% endblock %}

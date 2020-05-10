@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "alaert alert-info mx-auto p-3" style = "width : 450px">
+    <div class = "">
+    <form action = "#" method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ extended_form }}
+        <br>
+    <input type = "submit" value = "signup">
+    </form>
+    <br>
+    </div>
+    </div>
+{% endblock %}
